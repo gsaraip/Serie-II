@@ -1,0 +1,22 @@
+public class MainApp {
+
+    public static void main(String[] args) {
+        // Crear un objeto PasswordConfigDTO con las configuraciones deseadas
+        PasswordConfigDTO config = new PasswordConfigDTO();
+        config.setRestrictMinDigits(true);
+        config.setMinDigits(2);
+        config.setRestrictMinUpperCaseLetters(true);
+        config.setMinUpperCaseLetters(1);
+        config.setRestrictMinLowerCaseLetters(true);
+        config.setMinLowerCaseLetters(3);
+        config.setRestrictMinNonAlphanumericCharacters(true);
+        config.setMinNonAlphanumericCharacters(1);
+        config.setMinLength(10);
+
+        // Generar una contraseña usando la versión 2 del generador
+        String generatedPassword = PasswordGenerator.generatePassword(config);
+
+        // Imprimir la contraseña generada
+        System.out.println("Contraseña generada: " + generatedPassword);
+    }
+}
